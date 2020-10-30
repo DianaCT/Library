@@ -14,6 +14,8 @@ public class ScienceBook extends Books {
 
     }
     public ScienceBook(String title,String author,Integer numberOfPages,String topic){
+        super(title, author, numberOfPages);
+        this.topic = topic;
 
     }
 

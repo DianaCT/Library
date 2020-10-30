@@ -15,6 +15,8 @@ public class Novel extends Books {
     }
 
     public Novel(String title,String author,Integer numberOfPages,String category){
+       super(title, author, numberOfPages);
+       this.category = category;
 
     }
 
