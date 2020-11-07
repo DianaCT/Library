@@ -11,17 +11,20 @@ public class Phone extends Contact implements InPhoneOperations {
 
     private String color;
     private String material;
-    public ArrayList< Contact > contacts;
+    public ArrayList<Contact> contacts;
     public ArrayList<Integer> callHistory = new ArrayList<>();
+    int number = 0;
+    ReadFromConsole read = new ReadFromConsole();
 
-    public Phone(){
+
+    public Phone() {
 
     }
 
     public Phone(String color, String material) {
         this.color = color;
         this.material = material;
-        this.contacts = new ArrayList < Contact > ();
+        this.contacts = new ArrayList<Contact>();
 
     }
 
@@ -41,25 +44,22 @@ public class Phone extends Contact implements InPhoneOperations {
         material = newMaterial;
     }
 
-    public ArrayList < Contact > getContacts() {
+    public ArrayList<Contact> getContacts() {
         return contacts;
     }
-    public List < Integer > getCollHistory() {
+
+    public List<Integer> getCollHistory() {
         return callHistory;
     }
-
-    ReadFromConsole read = new ReadFromConsole();
-    int number = 0;
 
 
     @Override
     public void addContact() {
         int x = 0;
-        if(getContacts().isEmpty()){
+        if (getContacts().isEmpty()) {
             x = 1;
             System.out.println(x);
-        }
-        else {
+        } else {
             x = contacts.size() + 1;
             System.out.println(x);
         }
@@ -71,33 +71,31 @@ public class Phone extends Contact implements InPhoneOperations {
             System.out.println("Enter Name");
             //read.readString();
             String name = read.readString();
-            Contact newcontact = new Contact(x+i , name, phoneNumber);
+            Contact newcontact = new Contact(x + i, name, phoneNumber);
             contacts.add(newcontact);
         }
     }
 
 
-
     @Override
     public void listContacts() {
-        if(getContacts().isEmpty()){
+        if (getContacts().isEmpty()) {
             System.out.println("Empty contact list");
 
-        }
-        else {
+        } else {
             System.out.println("Contact list");
             for (int i = 0; i < getContacts().size(); i++) {
-                System.out.println(getContacts().get(i).getNr() +", "+ getContacts().get(i).getName() + ", " + getContacts().get(i).getTelnumber());
+                System.out.println(getContacts().get(i).getNr() + ", " + getContacts().get(i).getName() + ", " + getContacts().get(i).getTelnumber());
             }
         }
     }
 
     @Override
-    public void call( int refnr) {
+    public void call(int refnr) {
         int telefonNumber = 0;
-        if ( refnr > contacts.size()) {
+        if (refnr > contacts.size()) {
             System.out.println("Wrong index");
-        }else {
+        } else {
             for (int i = 0; i < contacts.size(); i++) {
                 Contact contact = this.contacts.get(i);
                 if (contact.getNr() == refnr) {

@@ -9,7 +9,7 @@ public class Contact {
 
     }
 
-    public Contact( int nr , String name, int telnumber) {
+    public Contact(int nr, String name, int telnumber) {
 
         this.name = name;
         this.nr = nr;
@@ -31,7 +31,7 @@ public class Contact {
 
     public void setNr(int newNr) {
         nr = newNr;
-   }
+    }
 
     public int getTelnumber() {
         return telnumber;
@@ -40,8 +40,6 @@ public class Contact {
     public void setTelnumber(int newTelnumber) {
         telnumber = newTelnumber;
     }
-
-
 
 
 }
