@@ -5,6 +5,7 @@ public abstract class HTC extends Phone {
     private String name;
     private String operationSystem;
 
+
     public HTC(String name, String color, String material, String operationSystem) {
         super(color, material);
         this.name = name;
